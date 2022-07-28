@@ -45,18 +45,19 @@
                     let post = response[i];
                     let title = post.title;
                     let name = post.name;
-
-                    addHTML(title, name);
+                    let createdAt = post.createdAt;
+                    addHTML(title, name, createdAt);
                 }
             }
         })
+    }
 
-        function addHTML(title, name) {
-            let tempHtml = `<article class="media">
+    function addHTML(title, name, createdAt) {
+        let tempHtml = `<article class="media">
         <div class="media-content">
             <div class="content">
                 <p>
-                    <strong>${title}</strong> <small>${name}</small> <small></small>
+                    <strong>${title}</strong> <small>${name}</small> <small>${createdAt}</small>
 
                 </p>
             </div>
@@ -81,7 +82,6 @@
             </nav>
         </div>
     </article>`
-        }
         $('#postBox').append(tempHtml);
     }
 
@@ -91,10 +91,9 @@
 <section class="hero is-small is-primary">
     <div class="hero-body">
         <p class="title">
-            Small hero
+            게시글 작성
         </p>
         <p class="subtitle">
-            Small subtitle
         </p>
     </div>
     <form class="box">
@@ -130,66 +129,7 @@
     </form>
 </section>
 <div id="postBox" class="box">
-    <article class="media">
-        <div class="media-content">
-            <div class="content">
-                <p>
-                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
-            </div>
-            <nav class="level is-mobile">
-                <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-            <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
-            </span>
-                    </a>
-                    <a class="level-item" aria-label="retweet">
-            <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
-            </span>
-                    </a>
-                    <a class="level-item" aria-label="like">
-            <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
-            </span>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </article>
-    <article class="media">
-        <div class="media-content">
-            <div class="content">
-                <p>
-                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
-            </div>
-            <nav class="level is-mobile">
-                <div class="level-left">
-                    <a class="level-item" aria-label="reply">
-            <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
-            </span>
-                    </a>
-                    <a class="level-item" aria-label="retweet">
-            <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
-            </span>
-                    </a>
-                    <a class="level-item" aria-label="like">
-            <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
-            </span>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </article>
+
 </div>
 </body>
 </html>
