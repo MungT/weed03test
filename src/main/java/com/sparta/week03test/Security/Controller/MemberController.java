@@ -20,8 +20,8 @@ public class MemberController {
         return ResponseEntity.ok(memberService.getMyInfo());
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<MemberResponseDto> getMemberInfo(@PathVariable String email) {
-        return ResponseEntity.ok(memberService.getMemberInfo(email));
+    @GetMapping("/{nickname}")
+    public ResponseEntity<MemberResponseDto> getMemberInfo(@PathVariable String nickname) {
+        return ResponseEntity.ok(memberService.getMemberInfo(nickname));
     }
 }

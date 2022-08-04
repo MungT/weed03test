@@ -31,10 +31,10 @@ public class AuthService {
     @Transactional
     public MemberResponseDto signup(MemberRequestDto memberRequestDto) {
         String pattern = "^[a-zA-Z\\d]{4,12}$";
-        String email = memberRequestDto.getEmail();
+        String nickname = memberRequestDto.getNickname();
         String password = memberRequestDto.getPassword();
-        if((Pattern.matches(pattern, email)) && Pattern.matches(pattern, password)) {
-            if (memberRepository.existsByEmail(memberRequestDto.getEmail())) {
+        if((Pattern.matches(pattern, nickname)) && Pattern.matches(pattern, password)) {
+            if (memberRepository.existsByNickname(memberRequestDto.getNickname())) {
                 throw new RuntimeException("이미 가입되어 있는 유저입니다");
             }
             Member member = memberRequestDto.toMember(passwordEncoder);

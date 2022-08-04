@@ -13,8 +13,8 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional(readOnly = true)
-    public MemberResponseDto getMemberInfo(String email) {
-        return memberRepository.findByEmail(email)
+    public MemberResponseDto getMemberInfo(String nickname) {
+        return memberRepository.findByNickname(nickname)
                 .map(MemberResponseDto::of)
                 .orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));
     }
