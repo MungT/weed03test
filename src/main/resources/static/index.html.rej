@@ -1,9 +1,0 @@
-diff a/src/main/resources/static/index.html b/src/main/resources/static/index.html	(rejected hunks)
-@@ -45,7 +45,6 @@
-                     let post = response[i];
-                     let title = post.title;
-                     let name = post.name;
--                    addHTML(title, name);
-                     let createdAt = post.createdAt;
-                     addHTML(title, name, createdAt);
-                 }

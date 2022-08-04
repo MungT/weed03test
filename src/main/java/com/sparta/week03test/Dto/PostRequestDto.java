@@ -1,12 +1,11 @@
-package com.sparta.week02test.domain;
+package com.sparta.week03test.domain;
 
 import lombok.Getter;
 
 @Getter
-public class PostInquiryDto {
+public class PostRequestDto {
     private String title;
     private String name;
+    private String password;
     private String contents;
-
-    }
-
+}
