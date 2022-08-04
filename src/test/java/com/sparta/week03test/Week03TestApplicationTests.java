@@ -1,10 +1,10 @@
-package com.sparta.week02test;
+package com.sparta.week03test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Week02testApplicationTests {
+class Week03TestApplicationTests {
 
     @Test
     void contextLoads() {

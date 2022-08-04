@@ -1,9 +1,9 @@
-package com.sparta.week02test.PostController;
+package com.sparta.week03test.PostController;
 
-import com.sparta.week02test.PostRepository.PostRepository;
-import com.sparta.week02test.PostService.PostService;
-import com.sparta.week02test.domain.Post;
-import com.sparta.week02test.domain.PostRequestDto;
+import com.sparta.week03test.PostRepository.PostRepository;
+import com.sparta.week03test.PostService.PostService;
+import com.sparta.week03test.domain.Post;
+import com.sparta.week03test.Dto.PostRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,18 +17,18 @@ public class PostRestController {
     private final PostRepository postRepository;
     private final PostService postService;
 
-    @GetMapping("/api/post")
+    @GetMapping("/api/auth/post")
     public List<Post> readPost() {
         return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
-    @PostMapping("/api/post")
+    @PostMapping("/api/post") //"키네임" : "값"
     public Post createPost(@RequestBody PostRequestDto requestDto) {
         Post post = new Post(requestDto);
         return postRepository.save(post);
     }
 
-    @GetMapping("/api/post/{id}")
+    @GetMapping("/api/auth/post/{id}")
     public List<Post> inquiryPost(@PathVariable Long id) {
         return postRepository.findAllById(Collections.singleton(id));
     }
@@ -43,7 +43,7 @@ public class PostRestController {
             return id;
     }
 
-    @DeleteMapping("/api/post/{id}")
+    @DeleteMapping("/api/post/{id}") // (/api/post/{id}?password="password")
     public Long deletePost(@PathVariable Long id, @RequestParam String password) {
         if (postService.Pwcheck(id, password)) {
             postRepository.deleteById(id);

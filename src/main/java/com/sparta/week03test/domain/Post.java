@@ -1,6 +1,7 @@
-package com.sparta.week02test.domain;
+package com.sparta.week03test.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sparta.week03test.Dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -42,4 +43,7 @@ public class Post extends Timestamped {
         this.name = requestDto.getName();
         this.contents = requestDto.getContents();
     }
+
+
+
 }

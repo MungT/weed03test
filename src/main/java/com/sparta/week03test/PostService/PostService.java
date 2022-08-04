@@ -1,8 +1,8 @@
-package com.sparta.week02test.PostService;
+package com.sparta.week03test.PostService;
 
-import com.sparta.week02test.PostRepository.PostRepository;
-import com.sparta.week02test.domain.Post;
-import com.sparta.week02test.domain.PostRequestDto;
+import com.sparta.week03test.PostRepository.PostRepository;
+import com.sparta.week03test.domain.Post;
+import com.sparta.week03test.Dto.PostRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
